@@ -18,7 +18,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: true,
+        entities: ['dist/**/*.entity{.ts,.js}'],
+        // synchronize: true,
         ssl: {
           rejectUnauthorized: false,
         },
